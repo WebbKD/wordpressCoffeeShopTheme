@@ -1,3 +1,6 @@
 $(document).ready(function(){
-    $('.slider').slider();
+    $('.slider').slider({
+      indicators : false,
+      height : 1000
+    });
   });
