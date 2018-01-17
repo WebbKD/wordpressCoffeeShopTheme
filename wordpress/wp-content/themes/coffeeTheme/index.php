@@ -2,17 +2,21 @@
 get_header();
 ?>
 
-<div class="slider">
-    <ul class="slides">
-      <li>
-        <img src="https://www.sumus-inc.com/wp-content/uploads/2016/01/coffee-1.jpg"> <!-- random image -->
-        <div class="caption center-align">
-          <h3>This is our big Tagline!</h3>
-          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-        </div>
-      </li>
-    </ul>
-  </div>
+<?php
+
+    if (have_posts()) :
+        while (have_posts()) : the_post(); 
+
+            the_content();
+           //get_template_part('content', get_post_format());
+        
+         endwhile; 
+        
+        else:
+            echo '<p>Content Coming Soon</p>';
+            
+        endif;
+?>
 
 <?php
 get_footer();
